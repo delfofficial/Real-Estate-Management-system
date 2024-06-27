@@ -19,6 +19,10 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->string('description');
             $table->string('image');
+            $table->string('video');
+            $table->string('location');
+            $table->string('features');
+
             $table->timestamps();
         });
     }

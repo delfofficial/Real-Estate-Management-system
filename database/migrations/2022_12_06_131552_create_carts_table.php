@@ -17,10 +17,13 @@ class CreateCartsTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('phone')->nullable();
-            $table->string('product_title')->nullable();
-            $table->string('price')->nullable();
+            $table->string('product_title');
+            $table->string('price');
+
             $table->string('address')->nullable();
             $table->string('image')->nullable();
+            $table->boolean('ordered');
+
             $table->timestamps();
         });
     }

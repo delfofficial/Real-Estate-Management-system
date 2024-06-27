@@ -7,16 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-   
+
         <!DOCTYPE html>
         <html lang="en">
           <head>
             <!-- Required meta tags -->
-            
+
 
           </head>
           <body>
-           
+            @include('navbar');
+
+
              <div style="position:relative; top:60px; right:-60px">
                  <table bgcolor="grey" border="3px">
                      <tr>
@@ -25,15 +27,22 @@
                          <th  style="padding: 30px">status</th>
                          <th  style="padding: 30px">Cancel Sale</th>
                      </tr>
-                     
+
                      @foreach ($data as $data )
                      <tr align="center">
                          <td>{{$data->name}}</td>
                          <td>{{$data->email}}</td>
                          <td>{{$data->status}}</td>
-                         
-                         <td><a href="{url('/deleteuser', $data->id)}}">Cancel</a></td>
-                        
+
+                         <td>
+
+                         <form action="{{ route('usercancel', $data->id) }}" method="POST">
+    @csrf
+    @method('DELETE')
+    <button type="submit">Cancel</button>
+</form>
+                         </td>
+
 
                      </tr>
                      @endforeach
@@ -41,12 +50,12 @@
                  </table>
              </div>
 
-           
+
 
 
           </body>
         </html>
-    
+
 
 
 </body>

@@ -8,6 +8,8 @@
     @include('css');
 </head>
 <body>
+    @include('navbar');
+
 
 <h1>Search</h1>
 @if(session()->has('message'))
@@ -32,7 +34,7 @@
                 <p>{{  $data->description}}</p>
                 <form action="{{route('addcart',$data->id)}}" method="POST">
                     @csrf
-                   
+
                     <input type="submit" class="btn btn-primary" value="Add cart">
                 </form>
 

@@ -9,23 +9,21 @@
 </head>
 <body>
 
-<h1>prd</h1>
+    @include('navbar');
+
+
+<h1 class="text-center"><b>Purchase Confirmation</b></h1>
 @if(session()->has('message'))
 <div class="alert alert-success">
     <button type="button" class="close" data-dismiss="alert"></button>
     {{ session()->get('message')}}
 </div>
 @endif
-<div class="lis">
-    <ul style="list-style: none;">
 
-        <li>hello</li>
-    </ul>
-</div>
-<div style="padding:40px;" align="center">
+<div  align="center" >
     <table align="center" >
         <tr>
-            <th style="">Product Name</th>
+            <th style="">Property Name</th>
             <th style="">Price</th>
             <th style="">image</th>
             <th style="">Action</th>
@@ -41,7 +39,7 @@
                 </td>
 
                 <td style="padding:15px;">
-                    <input type="text" name="price" value=" {{$carts->product_title }}" hidden>
+                    <input type="number" name="price" value=" {{$carts->price}}"> KES
                     {{$carts->price }}
                 </td>
                 <td style="padding:15px;">
@@ -62,11 +60,10 @@
         <h2>Payment Method:</h2>
 
       <div class="payment"><input type="radio" value="cash" name="payment"><span>Online Payment</span></div>
-      <div class="payment"><input type="radio" value="cash" name="payment"><span>EMI</span></div>
       <div class="payment"><input type="radio" value="cash"  name="payment"><span>Payent on delivery</span></div>
     </div>
     <br> <br>
-    <button class="btn btn-success">Confirm Order</button>
+    <button class="btn btn-success bg-warning" type="submit">Confirm Purchase of property</button>
 </form>
 
 </div>

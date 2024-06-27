@@ -70,7 +70,7 @@
       <div class="payment"><input type="radio" value="cash"  name="payment"><span>Payent on delivery</span></div>
     </div>
     <br> <br>
-    <button class="btn btn-success">Confirm Order</button>
+    <button class="btn btn-success">Confirm urchase of propertyp</button>
 </form>
 
 </div>

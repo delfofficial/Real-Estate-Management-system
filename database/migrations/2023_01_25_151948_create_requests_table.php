@@ -16,12 +16,16 @@ class CreateRequestsTable extends Migration
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-$table->string('phone');
-$table->string('email');
-$table->string('product_name');
-$table->integer('price');
-$table->string('image');
-$table->string('status')->default('pending');
+            $table->string('phone');
+            $table->string('email');
+            $table->string('product_name');
+            $table->integer('price');
+            $table->string('location');
+            $table->string('features');
+            $table->string('image');
+            $table->string('video')->nullable;
+            $table->boolean('ordered')->default(false);
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

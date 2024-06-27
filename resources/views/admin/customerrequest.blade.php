@@ -21,15 +21,16 @@
              <div style="position:relative; top:60px; right:-60px; bgcolor:black;">
                  <table bgcolor="grey" border="3px">
                      <tr>
-                         <th style="padding: 30px">Name</th>
-                         <th  style="padding: 30px">Phone</th>
-                         <th  style="padding: 30px">Email</th>
-                         <th  style="padding: 30px">title</th>
-                         <th  style="padding: 30px">Price</th>
-                         <th  style="padding: 30px">Image</th>
-                         <th  style="padding: 30px">Status</th>
-                         <th  style="padding: 30px">Approve</th>
-                         <th  style="padding: 30px">Cancel</th>
+                         <th style="padding: 20px">Name</th>
+                         <th  style="padding: 20px">Phone</th>
+                         <th  style="padding: 20px">Email</th>
+                         <th  style="padding: 20px">title</th>
+                         <th  style="padding: 20px">Price</th>
+                         <th  style="padding: 20px">Image</th>
+                         <th  style="padding: 20px">Status</th>
+                         <th  style="padding: 20px">Approve</th>
+                         <th  style="padding: 20px">Cancel</th>
+                         <th  style="padding: 20px">Edit</th>
 
                      </tr>
                      @foreach ($data as $data )
@@ -42,21 +43,20 @@
                          <td>{{$data->image}}</td>
                          <td>{{$data->status}}</td>
                          <td>
-                         <a href="{{url('/approve',$data->id)}}" class="btn btn-success">Approved</a>
+                         <a href="{{url('/approve',$data->id)}}" class="btn btn-success">Approve</a>
 
                          </td>
                          <td>
-                         <a href="{{url('/cancel',$data->id)}}" class="btn btn-danger">Canceled</a></td>
+                         <a href="{{url('/cancel',$data->id)}}" class="btn btn-danger">Cancel</a>
+                        </td>
+                         <td>
+                            <a href="{{url('/editsale',$data->id)}}" class="btn btn-primary">Edit
+
+                            </td>
 
                      </tr>
                      @endforeach
-                     <tr>
 
-                        <spanclass="tot" style="background: red">
-                    <h3>Total:{{ $total }}</h3>
-                </span>
-
-                     </tr>
                  </table>
 
 

@@ -23,6 +23,7 @@ $table->integer('price');
 $table->string('description');
 $table->string('image');
 $table->string('status')->default('pending');
+$table->boolean('ordered')->default(false);
             $table->timestamps();
         });
     }
